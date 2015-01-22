@@ -6,10 +6,13 @@
   <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body ng-cloak>
-  <div ng-controller="StoreController as store">
-    <h1>{{store.product.name}}</h1>
-    <h2>${{store.product.price}}</h2>
-    <p>{{store.product.description}}</p>
+  <div class="container" ng-controller="StoreController as store">
+    <div ng-repeat="product in store.products">
+      <h1> {{product.name}} </h1>
+      <h2> ${{product.price}} </h2>
+      <p> {{product.description}} </p>
+      <button ng-show="store.product.canPurchase"> Add to Cart </button>
+    </div>
   </div>
   <script src="angular.min.js"></script>
   <script src="app.js"></script>
