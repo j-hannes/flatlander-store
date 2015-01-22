@@ -6,7 +6,11 @@
   <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
-  {{ 1 + 2 }}
+  <div ng-controller="StoreController as store">
+    <h1>{{store.product.name}}</h1>
+    <h2>${{store.product.price}}</h2>
+    <p>{{store.product.description}}</p>
+  </div>
   <script src="angular.min.js"></script>
   <script src="app.js"></script>
 </body>
